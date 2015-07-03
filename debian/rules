@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+js-compressor := $(or $(notdir $(shell which uglifyjs)),yui-compressor)
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+
+%:
+	dh $@ 
+
+override_dh_auto_clean:
+	rm -rf debian/build
+
+override_dh_auto_build:
+	dh_auto_build
+	if [ ! -d debian/build ]; \
+		then mkdir debian/build; \
+	fi; \
+	for _FILE in index.js ; \
+	do \
+		cp $${_FILE} debian/build/; \
+		$(js-compressor)  -o debian/build/$$(basename $${_FILE} .js).min.js $${_FILE}; \
+	done
+
+# Uscan will read debian/watch, grab the correct version, repack and leave
+# it in the current directory
+get-orig-source:
+	uscan --no-conf --force-download --rename --repack --download-current-version --destdir=.

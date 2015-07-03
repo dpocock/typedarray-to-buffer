@@ -1,0 +1,23 @@
+Source: node-typedarray-to-buffer
+Section: web
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Daniel Pocock <daniel@pocock.pro>
+Build-Depends: debhelper (>= 9.0.0), node-uglify
+Standards-Version: 3.9.5
+Homepage: https://github.com/feross/typedarray-to-buffer
+Vcs-Browser: https://github.com/dpocock/typedarray-to-buffer
+Vcs-Git: https://github.com/dpocock/typedarray-to-buffer
+
+Package: libjs-typedarray-to-buffer
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: javascript-common
+Description: JavaScript utility converting TypedArray to buffer without copy
+ Convert a typed array to a Buffer without a copy.
+
+Package: node-typedarray-to-buffer
+Architecture: all
+Depends: ${misc:Depends}, nodejs (>= 0.6.19~dfsg1-3), libjs-typedarray-to-buffer
+Description: JavaScript utility converting TypedArray to buffer without copy
+ Convert a typed array to a Buffer without a copy.

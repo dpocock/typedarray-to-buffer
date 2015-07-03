@@ -1,0 +1,5 @@
+node-typedarray-to-buffer (3.0.3-1) unstable; urgency=low
+
+  * Initial upload (Closes: #790961)
+
+ -- Daniel Pocock <daniel@pocock.pro>  Fri, 03 Jul 2015 13:01:33 +0200
