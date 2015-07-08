@@ -18,6 +18,6 @@ Description: JavaScript utility converting TypedArray to buffer without copy
 
 Package: node-typedarray-to-buffer
 Architecture: all
-Depends: ${misc:Depends}, nodejs (>= 0.6.19~dfsg1-3), libjs-typedarray-to-buffer, node-is-typedarray
+Depends: ${misc:Depends}, nodejs (>= 0.6.19~dfsg1-3), libjs-typedarray-to-buffer (= ${binary:Version}), node-is-typedarray
 Description: JavaScript utility converting TypedArray to buffer without copy
  Convert a typed array to a Buffer without a copy.
