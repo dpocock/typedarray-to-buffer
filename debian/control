@@ -11,13 +11,13 @@ Vcs-Git: https://github.com/dpocock/typedarray-to-buffer
 
 Package: libjs-typedarray-to-buffer
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, libjs-is-typedarray
 Recommends: javascript-common
 Description: JavaScript utility converting TypedArray to buffer without copy
  Convert a typed array to a Buffer without a copy.
 
 Package: node-typedarray-to-buffer
 Architecture: all
-Depends: ${misc:Depends}, nodejs (>= 0.6.19~dfsg1-3), libjs-typedarray-to-buffer
+Depends: ${misc:Depends}, nodejs (>= 0.6.19~dfsg1-3), libjs-typedarray-to-buffer, node-is-typedarray
 Description: JavaScript utility converting TypedArray to buffer without copy
  Convert a typed array to a Buffer without a copy.
